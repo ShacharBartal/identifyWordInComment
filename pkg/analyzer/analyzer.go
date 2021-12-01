@@ -15,11 +15,11 @@ var (
 var Analyzer = &analysis.Analyzer{
 	Name:     "identifyWordAtComment",
 	Doc:      "Checks if customs words are contained in comments.",
-	Run:      run,
+	Run:      Run,
 	Requires: []*analysis.Analyzer{inspect.Analyzer},
 }
 
-func run(pass *analysis.Pass) (interface{}, error) {
+func Run(pass *analysis.Pass) (interface{}, error) {
 	inspectorI := pass.ResultOf[inspect.Analyzer].(*inspector.Inspector)
 
 	nodeFilter := []ast.Node{
