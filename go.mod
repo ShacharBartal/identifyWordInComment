@@ -1,4 +1,4 @@
-module identifyWordInComment
+module github/ShacharBarta/identifyWordInComment
 
 go 1.16
 

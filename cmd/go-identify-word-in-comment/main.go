@@ -1,8 +1,8 @@
 package main
 
 import (
+	"github/ShacharBarta/identifyWordInComment/pkg/analyzer"
 	"golang.org/x/tools/go/analysis/singlechecker"
-	"identifyWordInComment/pkg/analyzer"
 )
 
 func main() {
