@@ -4,15 +4,10 @@ import (
 	"fmt"
 )
 
-//func myLog(format string, args ...interface{}) {
-//	const prefix = "[my] "
-//	log.Printf(prefix + format, args...)
-//}
-
 // nolint - above
-func checkSpecialWordInFunc(){
+func checkSpecialWordInFunc() {
 	// nolint - in
 }
-func checkWordInString(){
+func checkWordInString() {
 	fmt.Println("dominos") // todo kuku
 }
