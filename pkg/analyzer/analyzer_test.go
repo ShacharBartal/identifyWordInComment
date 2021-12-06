@@ -1,8 +1,8 @@
 package analyzer_test
 
 import (
+	"github.com/ShacharBartal/identifyWordInComment/pkg/analyzer"
 	"golang.org/x/tools/go/analysis/analysistest"
-	"identifyWordInComment/pkg/analyzer"
 	"os"
 	"path/filepath"
 	"testing"

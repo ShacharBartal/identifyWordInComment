@@ -1,18 +1,26 @@
+//args: -EidentifyWordInComment
+
 package p
 
-import (
-	"fmt"
-)
+//nolint - before function declaration // want "word `nolint` is contained"
 
-//func myLog(format string, args ...interface{}) {
-//	const prefix = "[my] "
-//	log.Printf(prefix + format, args...)
-//}
-
-// nolint - above // want "word" "is contained"
-func checkSpecialWordInFunc() {
-	// nolint - in // want "word `nolint` is contained"
+func checkSpecialWordInCommentTst() {
+	//nolint - in function // want "word `nolint` is contained"
 }
-func checkWordInString() {
-	fmt.Println("dominos") // todo kuku // want "word `todo` is contained"
+
+func checkSpecialWordInCommentTst2() int {
+	return 1 // nolint:check for nolint with a linter report // want "word `nolint` is contained"
+}
+
+func checkSpecialWordInCommentTst3() bool {
+	return true // nolint:check // with some explain // want "word `nolint` is contained"
+}
+
+func checkSpecialWordInCommentTst4() string {
+	return "dominos" // dominos should not be in our code // want "word `dominos` is contained"
+}
+
+// nolint free in the air // want "word `nolint` is contained"
+
+func checkWordInCommentTst5() { // here please todo things // want "word `todo` is contained"
 }
