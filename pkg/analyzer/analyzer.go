@@ -46,9 +46,10 @@ func checkForKeyWord(cg *ast.CommentGroup, pass *analysis.Pass, keyWords ...stri
 		keyWords = defaultKeywords
 	}
 	for _, c := range cg.List {
-		for _, keyword := range keyWords {
-			if strings.Contains(c.Text, keyword) {
-				pass.Reportf(cg.Pos(), "word `%s` is contained", keyword)
+		for _, keyWord := range keyWords {
+
+			if strings.Contains(c.Text, keyWord) {
+				pass.Reportf(cg.Pos(), "word `%s` is contained", keyWord)
 			}
 		}
 	}
